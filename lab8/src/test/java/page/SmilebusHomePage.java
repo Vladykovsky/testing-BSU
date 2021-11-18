@@ -59,9 +59,9 @@ public class SmilebusHomePage {
     }
 
     public boolean checkRoutesFromGomelToRechica() {
-        new WebDriverWait(driver, Duration.ofSeconds(10))
+        WebElement emptyDiv = new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[contains(@class, 'el-title__text') and contains(string(), \"Рейсы не найдены\")]")));
-        if (driver.findElement(By.xpath("//div[contains(@class, 'el-title__text') and contains(string(), \"Рейсы не найдены\")]")) != null ) return true;
+        if (emptyDiv != null ) return true;
         boolean ifLocationsAreGomelAndRechica = true;
         new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class='pt-item-tour']/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1] ")));
